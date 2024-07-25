@@ -41,7 +41,7 @@ if [[ $WRT_TARGET == *"IPQ"* ]]; then
 	echo "CONFIG_ATH11K_MEM_PROFILE_1G=n" >> ./.config
 	echo "CONFIG_ATH11K_MEM_PROFILE_512M=y" >> ./.config
 fi
-
+echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./.config
 #科学插件设置
 if [[ $WRT_REPO == *"lede"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config
