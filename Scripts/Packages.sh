@@ -32,7 +32,7 @@ UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 # UPDATE_PACKAGE "advancedplus" "VIKINGYFY/luci-app-advancedplus" "main"
 UPDATE_PACKAGE "gecoosac" "lwb1978/openwrt-gecoosac" "main"
 
-UPDATE_PACKAGE "daed" "QiuSimons/luci-app-daed" "master"
+# UPDATE_PACKAGE "daed" "QiuSimons/luci-app-daed" "master"
 UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 
 if [[ $WRT_REPO != *"lede"* ]]; then
