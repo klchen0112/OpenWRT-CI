@@ -14,6 +14,8 @@ sed -i "s/hostname='.*'/hostname='$WRT_NAME'/g" $CFG_FILE
 sed -i "s/timezone='.*'/timezone='CST-8'/g" $CFG_FILE
 sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" $CFG_FILE
 
+
+
 if [[ $WRT_REPO == *"lede"* ]]; then
 	LEDE_FILE=$(find ./package/lean/autocore/ -type f -name "index.htm")
 	#修改默认时间格式
@@ -52,9 +54,25 @@ else
 	echo "CONFIG_PACKAGE_luci=y" >> ./.config
 	echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
+	echo "define KernelPackage/xdp-sockets-diag
+		SUBMENU:=$(NETWORK_SUPPORT_MENU)
+		TITLE:=PF_XDP sockets monitoring interface support for ss utility
+		KCONFIG:= \
+			CONFIG_XDP_SOCKETS=y \
+			CONFIG_XDP_SOCKETS_DIAG
+		FILES:=$(LINUX_DIR)/net/xdp/xsk_diag.ko
+		AUTOLOAD:=$(call AutoLoad,31,xsk_diag)
+		endef
+
+		define KernelPackage/xdp-sockets-diag/description
+		Support for PF_XDP sockets monitoring interface used by the ss tool
+		endef
+
+		$(eval $(call KernelPackage,xdp-sockets-diag))
+	" >> ./package/kernel/linux/modules/netsupport.mk
 	echo "CONFIG_PACKAGE_dae=y" >> ./.config
 	echo "CONFIG_PACKAGE_dae-geoip=y" >> ./.config
 	echo "CONFIG_PACKAGE_dae-geosite=y" >> ./.config
 	echo "CONFIG_PACKAGE_daed=y" >> ./.config
-	# echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./.config
 fi
