@@ -58,5 +58,5 @@ else
 	echo "CONFIG_PACKAGE_dae-geoip=y" >> ./.config
 	echo "CONFIG_PACKAGE_dae-geosite=y" >> ./.config
 	echo "CONFIG_PACKAGE_daed=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./.config
+	# echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./.config
 fi
