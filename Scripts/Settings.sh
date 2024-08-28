@@ -40,10 +40,10 @@ fi
 
 #高通平台锁定512M内存
 if [[ $WRT_TARGET == *"IPQ"* ]]; then
-	echo "CONFIG_IPQ_MEM_PROFILE_1024=n" >> ./.config
-	echo "CONFIG_IPQ_MEM_PROFILE_512=y" >> ./.config
-	echo "CONFIG_ATH11K_MEM_PROFILE_1G=n" >> ./.config
-	echo "CONFIG_ATH11K_MEM_PROFILE_512M=y" >> ./.config
+	echo "CONFIG_IPQ_MEM_PROFILE_1024=y" >> ./.config
+	echo "CONFIG_IPQ_MEM_PROFILE_512=n" >> ./.config
+	echo "CONFIG_ATH11K_MEM_PROFILE_1G=y" >> ./.config
+	echo "CONFIG_ATH11K_MEM_PROFILE_512M=n" >> ./.config
 fi
 
 #科学插件设置
