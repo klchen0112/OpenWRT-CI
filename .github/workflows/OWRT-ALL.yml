@@ -24,13 +24,13 @@ permissions: write-all
 
 #CI任务
 jobs:
-  wrt_config:
+  config:
     name: ${{matrix.TARGET}}
     strategy:
       fail-fast: false
       #max-parallel: 3
       matrix:
-        TARGET: [ROCKCHIP, X86]
+        TARGET: [MEDIATEK, ROCKCHIP, X86]
         SOURCE: [immortalwrt/immortalwrt]
 
     #调用公用编译核心WRT-CORE.yml
