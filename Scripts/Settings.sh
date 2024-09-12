@@ -26,10 +26,4 @@ if [ -n "$WRT_PACKAGE" ]; then
 	echo "$WRT_PACKAGE" >> ./.config
 fi
 
-#高通平台锁定1024M内存
-if [[ $WRT_TARGET == *"IPQ"* ]]; then
-	echo "CONFIG_IPQ_MEM_PROFILE_1024=y" >> ./.config
-	echo "CONFIG_IPQ_MEM_PROFILE_512=n" >> ./.config
-	echo "CONFIG_ATH11K_MEM_PROFILE_1G=y" >> ./.config
-	echo "CONFIG_ATH11K_MEM_PROFILE_512M=n" >> ./.config
-fi
+
