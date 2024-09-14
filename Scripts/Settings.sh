@@ -38,15 +38,27 @@ if [[ $WRT_TARGET == *"IPQ"* ]]; then
 	   echo "CONFIG_ATH11K_MEM_PROFILE_512M=y" >> ./.config
        echo "CONFIG_ATH11K_MEM_PROFILE_1G=n" >> ./.config
 fi
-
+# 主路由配置
 if [[$WRT_TARGET == *"MT7621"* ]]; then
 	# NATMAP
 	echo "CONFIG_PACKAGE_luci-app-natmap=y" >> ./.config   #NAT
 	#科学插件调整
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
-	#CONFIG_PACKAGE_luci-app-dae=n
+	#DAED CONFIG
+	echo '
+	CONFIG_DEVEL=y
+	CONFIG_BPF_TOOLCHAIN_HOST=y
+	# CONFIG_BPF_TOOLCHAIN_NONE is not set
+	CONFIG_KERNEL_BPF_EVENTS=y
+	CONFIG_KERNEL_CGROUP_BPF=y
+	CONFIG_KERNEL_DEBUG_INFO=y
+	CONFIG_KERNEL_DEBUG_INFO_BTF=y
+	# CONFIG_KERNEL_DEBUG_INFO_REDUCED is not set
+	CONFIG_PACKAGE_kmod-xdp-sockets-diag=y
+	CONFIG_PACKAGE_luci-app-daed=y
+	' >> ./.config
 	# DNS
 	echo "CONFIG_PACKAGE_luci-app-mosdns=y" >> ./.config #DNS服务器
 	# UU
-	echo "CONFIG_PACKAGE_luci-app-uugamebooster=y" >> ./.config # uu游戏
+	# echo "CONFIG_PACKAGE_luci-app-uugamebooster=y" >> ./.config # uu游戏
 fi
