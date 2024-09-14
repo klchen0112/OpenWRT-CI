@@ -26,6 +26,7 @@ UPDATE_PACKAGE() {
 UPDATE_PACKAGE "alpha" "derisamedia/luci-theme-alpha" "master"
 ## 科学上网插件
 UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
+UPDATE_PACKAGE "dae" "Basstorm/luci-app-dae" "main"
 UPDATE_PACKAGE "mihomo" "morytyann/OpenWrt-mihomo" "main"
 UPDATE_PACKAGE "nekoclash" "Thaolga/luci-app-nekoclash" "main"
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
