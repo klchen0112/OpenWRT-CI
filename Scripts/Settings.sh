@@ -39,7 +39,7 @@ if [[ $WRT_TARGET == *"IPQ"* ]]; then
        echo "CONFIG_ATH11K_MEM_PROFILE_1G=n" >> ./.config
 fi
 # 主路由配置
-if [[$WRT_TARGET == *"MT7621"* ]]; then
+if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	# NATMAP
 	echo "CONFIG_PACKAGE_luci-app-natmap=y" >> ./.config   #NAT
 	#科学插件调整
