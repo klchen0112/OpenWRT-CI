@@ -39,3 +39,14 @@ if [[ $WRT_TARGET == *"IPQ"* ]]; then
        echo "CONFIG_ATH11K_MEM_PROFILE_1G=n" >> ./.config
 fi
 
+if [[$WRT_TARGET == *"MT7621"* ]]; then
+	# NATMAP
+	echo "CONFIG_PACKAGE_luci-app-natmap=y" >> ./.config   #NAT
+	#科学插件调整
+	echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
+	#CONFIG_PACKAGE_luci-app-dae=n
+	# DNS
+	echo "CONFIG_PACKAGE_luci-app-mosdns=y" >> ./.config #DNS服务器
+	# UU
+	echo "CONFIG_PACKAGE_luci-app-uugamebooster=y" >> ./.config # uu游戏
+fi
