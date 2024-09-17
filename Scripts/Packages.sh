@@ -51,7 +51,7 @@ UPDATE_PACKAGE "luci-app-advancedplus" "VIKINGYFY/luci-app-advancedplus" "main"
 
 ## MESH AP
 UPDATE_PACKAGE "luci-app-gecoosac" "lwb1978/openwrt-gecoosac" "main"
-UPDATE_PACKAGE "luci-app-easymesh" "ntlf9t/luci-app-easymesh" "master"
+# UPDATE_PACKAGE "luci-app-easymesh" "ntlf9t/luci-app-easymesh" "master"
 UPDATE_PACKAGE "luci-app-fakemesh" "klchen0112/luci-app-fakemesh" "master"
 
 #更新软件包版本

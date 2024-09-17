@@ -93,8 +93,8 @@ CONFIG_PACKAGE_luci-app-filetransfer=n
 # TTYD
 CONFIG_PACKAGE_luci-app-ttyd=y
 # mesh
-CONFIG_PACKAGE_luci-app-fakemesh=n
-CONFIG_PACKAGE_luci-app-easymesh=y
+CONFIG_PACKAGE_luci-app-fakemesh=y
+CONFIG_PACKAGE_luci-app-easymesh=n
 #删除插件
 CONFIG_PACKAGE_luci-app-upnp=n
 CONFIG_PACKAGE_luci-app-advancedplus=n
