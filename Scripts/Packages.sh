@@ -26,12 +26,12 @@ UPDATE_PACKAGE() {
 UPDATE_PACKAGE "alpha" "derisamedia/luci-theme-alpha" "master"
 ## 科学上网插件
 UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
-UPDATE_PACKAGE "dae" "QiuSimons/luci-app-daed" "master"
+# UPDATE_PACKAGE "dae" "QiuSimons/luci-app-daed" "master"
 UPDATE_PACKAGE "mihomo" "morytyann/OpenWrt-mihomo" "main"
-UPDATE_PACKAGE "nekoclash" "Thaolga/luci-app-nekoclash" "main"
-UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
-UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main" "pkg"
-UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
+# UPDATE_PACKAGE "nekoclash" "Thaolga/luci-app-nekoclash" "main"
+# UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
+# UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main" "pkg"
+# UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
 
 ## DNS 服务器
 UPDATE_PACKAGE "luci-app-mosdns" "sbwml/luci-app-mosdns" "v5"
