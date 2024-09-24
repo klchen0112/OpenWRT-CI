@@ -48,15 +48,8 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-natmap=y" >> ./.config   #NAT
 	#科学插件调整
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
-	#DAED CONFIG
-	echo "CONFIG_DEVEL=y" >> ./config
-	echo "CONFIG_BPF_TOOLCHAIN_HOST=y" >> ./config
-	echo "CONFIG_KERNEL_BPF_EVENTS=y" >> ./config
-	echo "CONFIG_KERNEL_CGROUP_BPF=y" >> ./config
-	echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./config
-	echo "CONFIG_KERNEL_DEBUG_INFO_BTF=y" >> ./config
-	echo "CONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> ./config
-	echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./config
+	#DAE CONFIG
+	echo "CONFIG_PACKAGE_dae=y" >> ./config
 	# DNS
 	echo "CONFIG_PACKAGE_luci-app-mosdns=y" >> ./.config #DNS服务器
 	# UU
