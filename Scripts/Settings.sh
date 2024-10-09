@@ -32,9 +32,11 @@ fi
 
 #高通平台调整
 if [[ $WRT_TARGET == *"IPQ"* ]]; then
-	   echo "CONFIG_NSS_MESH_SUPPORT=y" >> ./config
-	   echo "CONFIG_NSS_MEM_PROFILE_HIGH=y" >> ./config
+	#取消nss相关feed
+	echo "CONFIG_FEED_nss_packages=n" >> ./.config
+	echo "CONFIG_FEED_sqm_scripts_nss=n" >> ./.config
 fi
+
 # 主路由配置
 if [[ $WRT_TARGET != *"MT7621"* ]]; then
     # netspeedtest
@@ -44,7 +46,7 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	#科学插件调整
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=n" >> ./.config
 	#DAE CONFIG
-	echo "CONFIG_PACKAGE_dae=y" >> ./config
+	echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./config
 	echo "CONFIG_KERNEL_DEBUG_KERNEL=y" >> ./config
 	echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./config
 	echo "CONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> ./config
@@ -63,7 +65,4 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-mosdns=y" >> ./.config #DNS服务器
 	# UU
 	# echo "CONFIG_PACKAGE_luci-app-uugamebooster=y" >> ./.config # uu游戏
-	#取消nss相关feed
-	echo "CONFIG_FEED_nss_packages=n" >> ./.config
-	echo "CONFIG_FEED_sqm_scripts_nss=n" >> ./.config
 fi
