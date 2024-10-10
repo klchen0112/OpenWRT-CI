@@ -44,8 +44,9 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	# NATMAP
 	echo "CONFIG_PACKAGE_luci-app-natmap=y" >> ./.config
 	#科学插件调整
-	echo "CONFIG_PACKAGE_luci-app-homeproxy=n" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
 	#DAE CONFIG
+	echo "CONFIG_PACKAGE_dae=y" >> ./config
 	echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./config
 	echo "CONFIG_KERNEL_DEBUG_KERNEL=y" >> ./config
 	echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./config
