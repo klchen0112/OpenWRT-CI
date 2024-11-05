@@ -37,12 +37,14 @@ UPDATE_PACKAGE "mihomo" "morytyann/OpenWrt-mihomo" "main"
 UPDATE_PACKAGE "luci-app-mosdns" "sbwml/luci-app-mosdns" "v5"
 
 ## VPN
-UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
-UPDATE_PACKAGE "luci-app-wolplus" "VIKINGYFY/luci-app-wolplus" "main"
 UPDATE_PACKAGE "alist" "sbwml/luci-app-alist" "main"
-UPDATE_PACKAGE "easytier" "lazyoop/networking-artifact" "main" "pkg"
-UPDATE_PACKAGE "mosdns" "sbwml/luci-app-mosdns" "main"
 UPDATE_PACKAGE "vnt" "lazyoop/networking-artifact" "main" "pkg"
+UPDATE_PACKAGE "easytier" "lazyoop/networking-artifact" "main" "pkg"
+
+UPDATE_PACKAGE "luci-app-advancedplus" "VIKINGYFY/packages" "main" "pkg"
+UPDATE_PACKAGE "luci-app-gecoosac" "lwb1978/openwrt-gecoosac" "main"
+UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
+UPDATE_PACKAGE "luci-app-wolplus" "VIKINGYFY/packages" "main" "pkg"
 
 ## 网络相关
 UPDATE_PACKAGE "luci-app-netspeedtest" "muink/luci-app-netspeedtest" "master"
