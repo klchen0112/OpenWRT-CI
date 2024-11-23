@@ -59,6 +59,6 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	echo "CONFIG_BPF_TOOLCHAIN_NONE=n" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-mosdns=y" >> ./.config #DNS服务器
 	echo "CONFIG_PACKAGE_luci-app-uugamebooster=y" >> ./.config # uu游戏
-	echo "CONFIG_PACKAGE_tailscale=y" >> ./.config #DNS服务器
-	echo "CONFIG_PACKAGE_tailscaled=y" >> ./.config #DNS服务器
+	echo "CONFIG_PACKAGE_tailscale=y" >> ./.config #vpn
+	echo "CONFIG_PACKAGE_tailscaled=y" >> ./.config #vpn
 fi
