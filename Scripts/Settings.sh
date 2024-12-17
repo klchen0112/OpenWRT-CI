@@ -46,12 +46,6 @@ if [ -n "$WRT_PACKAGE" ]; then
 	echo "$WRT_PACKAGE" >> ./.config
 fi
 
-#高通平台调整
-if [[ $WRT_TARGET == *"IPQ"* ]]; then
-	#取消nss相关feed
-	echo "CONFIG_FEED_nss_packages=n" >> ./.config
-	echo "CONFIG_FEED_sqm_scripts_nss=n" >> ./.config
-fi
 
 # 主路由配置
 if [[ $WRT_TARGET != *"MT7621"* ]]; then
@@ -59,20 +53,6 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-natmap=y" >> ./.config
 	echo "CONFIG_PACKAGE_dae=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-daed=n" >> ./.config
-	echo "CONFIG_KERNEL_DEBUG_KERNEL=y" >> ./.config
-	echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./.config
-	echo "CONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> ./.config
-	echo "CONFIG_KERNEL_DEBUG_INFO_BTF=y" >> ./.config
-	echo "CONFIG_BPF_TOOLCHAIN_HOST=y" >> ./.config
-	echo "CONFIG_KERNEL_BPF_EVENTS=y" >> ./.config
-	echo "CONFIG_KERNEL_CGROUP_BPF=y" >> ./.config
-	echo "CONFIG_BPF_SYSCALL=y" >> ./.config
-	echo "CONFIG_BPF_JIT=y" >> ./.config
-	echo "CONFIG_NET_CLS_BPF=y" >> ./.config
-	echo "CONFIG_NET_ACT_BPF=y" >> ./.config
-	echo "CONFIG_XDP_SOCKETS=y" >> ./.config
-	echo "CONFIG_XDP_SOCKETS_DIAG=y" >> ./.config
-	echo "CONFIG_BPF_TOOLCHAIN_NONE=n" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-mosdns=n" >> ./.config #DNS服务器
 	echo "CONFIG_PACKAGE_luci-app-uugamebooster=y" >> ./.config # uu游戏
 	echo "CONFIG_PACKAGE_tailscale=y" >> ./.config #vpn
