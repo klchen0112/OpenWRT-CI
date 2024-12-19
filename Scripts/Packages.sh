@@ -62,12 +62,12 @@ UPDATE_PACKAGE "luci-app-gecoosac" "lwb1978/openwrt-gecoosac" "main"
 # UPDATE_PACKAGE "luci-app-easymesh" "ntlf9t/luci-app-easymesh" "master"
 UPDATE_PACKAGE "luci-app-fakemesh" "klchen0112/luci-app-fakemesh" "master"
 
-UPDATE_PACKAGE "sing-box" "PuerNya/sing-box" "building"
 
 #更新软件包版本
 UPDATE_VERSION() {
 	local PKG_NAME=$1
 	local PKG_MARK=${2:-not}
+	local PKG_REPO=$3
 	local PKG_FILES=$(find ./ ../feeds/packages/ -maxdepth 3 -type f -wholename "*/$PKG_NAME/Makefile")
 
 	echo " "
@@ -99,6 +99,5 @@ UPDATE_VERSION() {
 }
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
-# UPDATE_VERSION "sing-box"
 # UPDATE_VERSION "dae"
 # UPDATE_VERSION "tailscale"
