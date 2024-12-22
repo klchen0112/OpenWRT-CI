@@ -93,7 +93,7 @@ jobs:
           sudo -E apt -yqq autoclean
           sudo -E apt -yqq clean
           sudo -E apt -yqq install dos2unix libfuse-dev ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
-                                    bzip2 ccache clang cmake cpio curl device-tree-compiler ecj fastjar flex gawk gettext gcc-multilib \
+                                    bzip2 ccache cmake cpio curl device-tree-compiler ecj fastjar flex gawk gettext gcc-multilib \
                                     g++-multilib git gnutls-dev gperf haveged help2man intltool lib32gcc-s1 libc6-dev-i386 libelf-dev \
                                     libglib2.0-dev libgmp3-dev libltdl-dev libmpc-dev libmpfr-dev libncurses-dev libpython3-dev \
                                     libreadline-dev libssl-dev libtool libyaml-dev libz-dev lld llvm lrzsz mkisofs msmtp nano \
