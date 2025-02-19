@@ -6,12 +6,39 @@ UPDATE_PACKAGE() {
 	local PKG_REPO=$2
 	local PKG_BRANCH=$3
 	local PKG_SPECIAL=$4
+	local CUSTOM_NAMES=($5)  # 第5个参数为自定义名称列表
 	local REPO_NAME=$(echo $PKG_REPO | cut -d '/' -f 2)
 
-	find ./ ../feeds/luci/ ../feeds/packages/ -maxdepth 3 -type d -iname "*$PKG_NAME*" -exec rm -rf {} +
+	echo " "
 
+	# 将 PKG_NAME 加入到需要查找的名称列表中
+	if [ ${#CUSTOM_NAMES[@]} -gt 0 ]; then
+		CUSTOM_NAMES=("$PKG_NAME" "${CUSTOM_NAMES[@]}")  # 将 PKG_NAME 添加到自定义名称列表的开头
+	else
+		CUSTOM_NAMES=("$PKG_NAME")  # 如果没有自定义名称，则只使用 PKG_NAME
+	fi
+
+	# 删除本地可能存在的不同名称的软件包
+	for NAME in "${CUSTOM_NAMES[@]}"; do
+		# 查找匹配的目录
+		echo "Searching directory: $NAME"
+		local FOUND_DIRS=$(find ../feeds/luci/ ../feeds/packages/ -maxdepth 3 -type d -iname "*$NAME*" 2>/dev/null)
+
+		# 删除找到的目录
+		if [ -n "$FOUND_DIRS" ]; then
+			echo "$FOUND_DIRS" | while read -r DIR; do
+				rm -rf "$DIR"
+				echo "Deleted directory: $DIR"
+			done
+		else
+			echo "No directories found matching name: $NAME"
+		fi
+	done
+
+	# 克隆 GitHub 仓库
 	git clone --depth=1 --single-branch --branch $PKG_BRANCH "https://github.com/$PKG_REPO.git"
 
+	# 处理克隆的仓库
 	if [[ $PKG_SPECIAL == "pkg" ]]; then
 		find ./$REPO_NAME/*/ -maxdepth 3 -type d -iname "*$PKG_NAME*" -prune -exec cp -rf {} ./ \;
 		rm -rf ./$REPO_NAME/
@@ -23,16 +50,16 @@ UPDATE_PACKAGE() {
 #UPDATE_PACKAGE "包名" "项目地址" "项目分支" "pkg/name，可选，pkg为从大杂烩中单独提取包名插件；name为重命名为包名"
 
 ## Openwrt 主题
-UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "master"
+UPDATE_PACKAGE "argon" "sbwml/luci-theme-argon" "openwrt-24.10"
 UPDATE_PACKAGE "kucat" "sirpdboy/luci-theme-kucat" "js"
 UPDATE_PACKAGE "alpha" "derisamedia/luci-theme-alpha" "master"
+
 ## 科学上网插件
 UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
-# UPDATE_PACKAGE "dae" "QiuSimons/luci-app-daed" "master"
-# UPDATE_PACKAGE "nekoclash" "Thaolga/luci-app-nekoclash" "main"
-# UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
-# UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main" "pkg"
-# UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
+UPDATE_PACKAGE "nikki" "nikkinikki-org/OpenWrt-nikki" "main"
+UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
+UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main" "pkg"
+UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
 
 ## DNS 服务器
 UPDATE_PACKAGE "luci-app-mosdns" "sbwml/luci-app-mosdns" "v5"
