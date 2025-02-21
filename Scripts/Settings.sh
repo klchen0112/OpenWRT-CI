@@ -58,7 +58,9 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-uugamebooster=n" >> ./.config # uu游戏
 	echo "CONFIG_PACKAGE_tailscale=y" >> ./.config #vpn
 	echo "CONFIG_PACKAGE_tailscaled=y" >> ./.config #vpn
-if [[ $WRT_TARGET != *"IPQ"* ]]; then
+fi
+
+if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
 	echo "CONFIG_BPF=y" >> ./.config
 	echo "CONFIG_BPF_SYSCALL=y" >> ./.config
 	echo "CONFIG_BPF_JIT=y" >> ./.config
@@ -70,7 +72,7 @@ if [[ $WRT_TARGET != *"IPQ"* ]]; then
 	echo "CONFIG_PACKAGE_dae=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-daed=n" >> ./.config
 fi
-fi
+
 #高通平台调整
 if [[ $WRT_TARGET == *"QUALCOMMAX"* ]]; then
 	#取消nss相关feed
