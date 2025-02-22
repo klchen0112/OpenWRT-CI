@@ -61,6 +61,8 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 fi
 
 if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
+
+# DAE
 	echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./.config
 	echo "CONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> ./.config
 	echo "CONFIG_KERNEL_DEBUG_INFO_BTF=y" >> ./.config
@@ -69,8 +71,17 @@ if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
 	echo "CONFIG_BPF_TOOLCHAIN_HOST=y" >> ./.config
 	echo "CONFIG_KERNEL_XDP_SOCKETS=y" >> ./.config
 	echo "CONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> ./.config
+	# SAVING RAM FOR DAE
+	echo "CONFIG_PACKAGE_zram-swap=y" >> ./.config
+	echo "CONFIG_PACKAGE_kmod-lib-lz4=y" >> ./.config
+	echo "CONFIG_PACKAGE_kmod-lib-lzo=y" >> ./.config
+	echo "CONFIG_PACKAGE_kmod-lib-zstd=y" >> ./.config
+	### AGGRESSIVE ###
+	echo "CONFIG_USE_GC_SECTIONS=y" >> ./.config
+	echo "CONFIG_USE_LTO=y" >> ./.config
 	echo "CONFIG_PACKAGE_dae=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./.config
+
 fi
 
 #高通平台调整
