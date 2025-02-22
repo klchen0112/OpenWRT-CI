@@ -52,25 +52,25 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
     echo "CONFIG_PACKAGE_luci-app-netspeedtest=n" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-natmap=y" >> ./.config
 	echo "CONFIG_PACKAGE_sing-box=y" >> ./.config #DNS服务器
-	echo "CONFIG_PACKAGE_luci-app-homeproxy=n" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
 	echo "CONFIG_PACKAGE_mosdns=y" >> ./.config #DNS服务器
-	echo "CONFIG_PACKAGE_luci-app-mosdns=n" >> ./.config #DNS服务器
+	echo "CONFIG_PACKAGE_luci-app-mosdns=y" >> ./.config #DNS服务器
 	echo "CONFIG_PACKAGE_luci-app-uugamebooster=n" >> ./.config # uu游戏
 	echo "CONFIG_PACKAGE_tailscale=y" >> ./.config #vpn
 	echo "CONFIG_PACKAGE_tailscaled=y" >> ./.config #vpn
 fi
 
 if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
-	echo "CONFIG_BPF=y" >> ./.config
-	echo "CONFIG_BPF_SYSCALL=y" >> ./.config
-	echo "CONFIG_BPF_JIT=y" >> ./.config
-	echo "CONFIG_CGROUPS=y" >> ./.config
-	echo "CONFIG_NET_INGRESS=y" >> ./.config
-	echo "CONFIG_NET_EGRESS=y" >> ./.config
-	echo "CONFIG_NET_SCH_INGRESS=m" >> ./.config
-	echo "CONFIG_NET_CLS_ACT=y" >> ./.config
+	echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./.config
+	echo "CONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> ./.config
+	echo "CONFIG_KERNEL_DEBUG_INFO_BTF=y" >> ./.config
+	echo "CONFIG_KERNEL_CGROUP_BPF=y" >> ./.config
+	echo "CONFIG_KERNEL_BPF_EVENTS=y" >> ./.config
+	echo "CONFIG_BPF_TOOLCHAIN_HOST=y" >> ./.config
+	echo "CONFIG_KERNEL_XDP_SOCKETS=y" >> ./.config
+	echo "CONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> ./.config
 	echo "CONFIG_PACKAGE_dae=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-daed=n" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./.config
 fi
 
 #高通平台调整
