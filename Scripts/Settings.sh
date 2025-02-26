@@ -84,7 +84,7 @@ if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
 	echo "CONFIG_USE_LTO=y" >> ./.config
 	echo "CONFIG_PACKAGE_dae=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-daed=n" >> ./.config
-
+	echo "CONFIG_PACKAGE_luci-app-nikki=y" >> ./.config
 fi
 
 #高通平台调整
