@@ -63,7 +63,7 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=n" >> ./.config
 fi
 
-if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
+# if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
 
 # DAE
 	# echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./.config
@@ -85,7 +85,7 @@ if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
 	# echo "CONFIG_PACKAGE_dae=y" >> ./.config
 	# echo "CONFIG_PACKAGE_luci-app-daed=n" >> ./.config
 	# echo "CONFIG_PACKAGE_luci-app-nikki=y" >> ./.config
-fi
+# fi
 
 #高通平台调整
 if [[ $WRT_TARGET == *"QUALCOMMAX"* ]]; then
