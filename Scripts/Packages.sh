@@ -55,7 +55,7 @@ UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main" "pkg"
 UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
 
 ## DNS 服务器
-UPDATE_PACKAGE "luci-app-mosdns" "sbwml/luci-app-mosdns" "v5" "v2dat"
+# UPDATE_PACKAGE "luci-app-mosdns" "sbwml/luci-app-mosdns" "v5" "v2dat"
 
 ## VPN
 UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
