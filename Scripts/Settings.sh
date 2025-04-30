@@ -60,8 +60,9 @@ fi
 
 if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	echo "CONFIG_PACKAGE_sing-box=y" >> ./.config #DNS服务器
+	echo "CONFIG_PACKAGE_mihomo=y" >> ./.config #DNS服务器
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=n" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-nikki=y" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-nikki=n" >> ./.config
 fi
 
 # if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
