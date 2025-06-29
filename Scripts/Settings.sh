@@ -52,8 +52,7 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
     echo "CONFIG_PACKAGE_luci-app-netspeedtest=n" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-natmap=y" >> ./.config
 	echo "CONFIG_PACKAGE_mosdns=y" >> ./.config #DNS服务器
-	echo "CONFIG_PACKAGE_luci-app-mosdns=n" >> ./.config #DNS服务器
-	echo "CONFIG_PACKAGE_luci-app-uugamebooster=n" >> ./.config # uu游戏
+	echo "CONFIG_PACKAGE_luci-app-mosdns=y" >> ./.config #DNS服务器
 	echo "CONFIG_PACKAGE_tailscale=y" >> ./.config #vpn
 	echo "CONFIG_PACKAGE_tailscaled=y" >> ./.config #vpn
 fi
