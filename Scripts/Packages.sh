@@ -44,11 +44,14 @@ UPDATE_PACKAGE() {
 
 ## Openwrt 主题
 UPDATE_PACKAGE "argon" "sbwml/luci-theme-argon" "openwrt-24.10"
+UPDATE_PACKAGE "aurora" "eamonxg/luci-theme-aurora" "master"
+UPDATE_PACKAGE "aurora-config" "eamonxg/luci-app-aurora-config" "master"
 UPDATE_PACKAGE "kucat" "sirpdboy/luci-theme-kucat" "js"
 UPDATE_PACKAGE "alpha" "derisamedia/luci-theme-alpha" "master"
 
 ## 科学上网插件
 UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
+UPDATE_PACKAGE "momo" "nikkinikki-org/OpenWrt-momo" "main"
 UPDATE_PACKAGE "nikki" "nikkinikki-org/OpenWrt-nikki" "main"
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main" "pkg"
@@ -58,7 +61,6 @@ UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main" "pkg"
 UPDATE_PACKAGE "luci-app-mosdns" "sbwml/luci-app-mosdns" "v5" "v2dat"
 
 ## VPN
-UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 # UPDATE_PACKAGE "luci-app-UUGameAcc" "BCYDTZ/luci-app-UUGameAcc" "main"
 
 ## 网络相关
@@ -66,6 +68,19 @@ UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 UPDATE_PACKAGE "luci-app-wolplus" "VIKINGYFY/luci-app-wolplus" "main"
 UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 UPDATE_PACKAGE "qmodem" "FUjr/modem_feeds" "main"
+UPDATE_PACKAGE "ddns-go" "sirpdboy/luci-app-ddns-go" "main"
+UPDATE_PACKAGE "diskman" "lisaac/luci-app-diskman" "master"
+UPDATE_PACKAGE "easytier" "EasyTier/luci-app-easytier" "main"
+UPDATE_PACKAGE "fancontrol" "rockjake/luci-app-fancontrol" "main"
+UPDATE_PACKAGE "gecoosac" "lwb1978/openwrt-gecoosac" "main"
+UPDATE_PACKAGE "mosdns" "sbwml/luci-app-mosdns" "v5" "" "v2dat"
+UPDATE_PACKAGE "netspeedtest" "sirpdboy/luci-app-netspeedtest" "js" "" "homebox speedtest"
+UPDATE_PACKAGE "openlist2" "sbwml/luci-app-openlist2" "main"
+UPDATE_PACKAGE "partexp" "sirpdboy/luci-app-partexp" "main"
+UPDATE_PACKAGE "qbittorrent" "sbwml/luci-app-qbittorrent" "master" "" "qt6base qt6tools rblibtorrent"
+UPDATE_PACKAGE "qmodem" "FUjr/QModem" "main"
+UPDATE_PACKAGE "quickfile" "sbwml/luci-app-quickfile" "main"
+UPDATE_PACKAGE "viking" "VIKINGYFY/packages" "main" "" "luci-app-timewol luci-app-wolplus"
 UPDATE_PACKAGE "vnt" "lmq8267/luci-app-vnt" "main"
 
 if [[ $WRT_REPO != *"immortalwrt"* ]]; then
@@ -124,4 +139,4 @@ UPDATE_VERSION() {
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
 UPDATE_VERSION "sing-box"
-UPDATE_VERSION "tailscale"
+#UPDATE_VERSION "tailscale"
