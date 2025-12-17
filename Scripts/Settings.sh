@@ -66,29 +66,27 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-nikki=n" >> ./.config
 fi
 
-# if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
-
 # DAE
-	# echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./.config
-	# echo "CONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> ./.config
-	# echo "CONFIG_KERNEL_DEBUG_INFO_BTF=y" >> ./.config
-	# echo "CONFIG_KERNEL_CGROUP_BPF=y" >> ./.config
-	# echo "CONFIG_KERNEL_BPF_EVENTS=y" >> ./.config
-	# echo "CONFIG_BPF_TOOLCHAIN_HOST=y" >> ./.config
-	# echo "CONFIG_KERNEL_XDP_SOCKETS=y" >> ./.config
-	# echo "CONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> ./.config
+if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
+	echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./.config
+	echo "CONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> ./.config
+	echo "CONFIG_KERNEL_DEBUG_INFO_BTF=y" >> ./.config
+	echo "CONFIG_KERNEL_CGROUP_BPF=y" >> ./.config
+	echo "CONFIG_KERNEL_BPF_EVENTS=y" >> ./.config
+	echo "CONFIG_BPF_TOOLCHAIN_HOST=y" >> ./.config
+	echo "CONFIG_KERNEL_XDP_SOCKETS=y" >> ./.config
+	echo "CONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> ./.config
 	# SAVING RAM FOR DAE
-	# echo "CONFIG_PACKAGE_zram-swap=y" >> ./.config
-	# echo "CONFIG_PACKAGE_kmod-lib-lz4=y" >> ./.config
-	# echo "CONFIG_PACKAGE_kmod-lib-lzo=y" >> ./.config
-	# echo "CONFIG_PACKAGE_kmod-lib-zstd=y" >> ./.config
-	### AGGRESSIVE ###
-	# echo "CONFIG_USE_GC_SECTIONS=y" >> ./.config
-	# echo "CONFIG_USE_LTO=y" >> ./.config
-	# echo "CONFIG_PACKAGE_dae=y" >> ./.config
-	# echo "CONFIG_PACKAGE_luci-app-daed=n" >> ./.config
-	# echo "CONFIG_PACKAGE_luci-app-nikki=y" >> ./.config
-# fi
+	echo "CONFIG_PACKAGE_zram-swap=y" >> ./.config
+	echo "CONFIG_PACKAGE_kmod-lib-lz4=y" >> ./.config
+	echo "CONFIG_PACKAGE_kmod-lib-lzo=y" >> ./.config
+	echo "CONFIG_PACKAGE_kmod-lib-zstd=y" >> ./.config
+	## AGGRESSIVE ###
+	echo "CONFIG_USE_GC_SECTIONS=y" >> ./.config
+	echo "CONFIG_USE_LTO=y" >> ./.config
+	echo "CONFIG_PACKAGE_dae=y" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-daed=n" >> ./.config
+fi
 
 #高通平台调整
 DTS_PATH="./target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/"
