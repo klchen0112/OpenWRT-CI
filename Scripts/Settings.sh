@@ -60,6 +60,7 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 fi
 
 if [[ $WRT_TARGET != *"MT7621"* ]]; then
+	echo "CONFIG_PACKAGE_luci-app-easytier=y" >> ./.config #easytier
 	echo "CONFIG_PACKAGE_sing-box=y" >> ./.config #DNS服务器
 	echo "CONFIG_PACKAGE_mihomo=y" >> ./.config #DNS服务器
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=n" >> ./.config
