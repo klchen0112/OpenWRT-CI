@@ -64,31 +64,32 @@ fi
 if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-easytier=y" >> ./.config #easytier
 	echo "CONFIG_PACKAGE_sing-box=y" >> ./.config #DNS服务器
-	echo "CONFIG_PACKAGE_mihomo=y" >> ./.config #DNS服务器
+	echo "CONFIG_PACKAGE_mihomo=n" >> ./.config #DNS服务器
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=n" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-nikki=n" >> ./.config
 fi
 
 # DAE
-if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
-	echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./.config
-	echo "CONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> ./.config
-	echo "CONFIG_KERNEL_DEBUG_INFO_BTF=y" >> ./.config
-	echo "CONFIG_KERNEL_CGROUP_BPF=y" >> ./.config
-	echo "CONFIG_KERNEL_BPF_EVENTS=y" >> ./.config
-	echo "CONFIG_BPF_TOOLCHAIN_HOST=y" >> ./.config
-	echo "CONFIG_KERNEL_XDP_SOCKETS=y" >> ./.config
-	echo "CONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> ./.config
-	# SAVING RAM FOR DAE
-	echo "CONFIG_PACKAGE_zram-swap=y" >> ./.config
-	echo "CONFIG_PACKAGE_kmod-lib-lz4=y" >> ./.config
-	echo "CONFIG_PACKAGE_kmod-lib-lzo=y" >> ./.config
-	echo "CONFIG_PACKAGE_kmod-lib-zstd=y" >> ./.config
-	## AGGRESSIVE ###
-	echo "CONFIG_USE_GC_SECTIONS=y" >> ./.config
-	echo "CONFIG_USE_LTO=y" >> ./.config
-	echo "CONFIG_PACKAGE_dae=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-daed=n" >> ./.config
+# if [[ $WRT_TARGET != *"MT7621"* && $WRT_TARGET != *"IPQ"* ]]; then
+# 	echo "CONFIG_KERNEL_DEBUG_INFO=y" >> ./.config
+# 	echo "CONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> ./.config
+# 	echo "CONFIG_KERNEL_DEBUG_INFO_BTF=y" >> ./.config
+# 	echo "CONFIG_KERNEL_CGROUP_BPF=y" >> ./.config
+# 	echo "CONFIG_KERNEL_BPF_EVENTS=y" >> ./.config
+# 	echo "CONFIG_BPF_TOOLCHAIN_HOST=y" >> ./.config
+# 	echo "CONFIG_KERNEL_XDP_SOCKETS=y" >> ./.config
+# 	echo "CONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> ./.config
+# 	# SAVING RAM FOR DAE
+# 	echo "CONFIG_PACKAGE_zram-swap=y" >> ./.config
+# 	echo "CONFIG_PACKAGE_kmod-lib-lz4=y" >> ./.config
+# 	echo "CONFIG_PACKAGE_kmod-lib-lzo=y" >> ./.config
+# 	echo "CONFIG_PACKAGE_kmod-lib-zstd=y" >> ./.config
+# 	## AGGRESSIVE ###
+# 	echo "CONFIG_USE_GC_SECTIONS=y" >> ./.config
+# 	echo "CONFIG_USE_LTO=y" >> ./.config
+# 	echo "CONFIG_PACKAGE_dae=y" >> ./.config
+# 	echo "CONFIG_PACKAGE_luci-app-daed=n" >> ./.config
+# fi
 #无WIFI配置标志
 if [[ "${WRT_CONFIG,,}" == *"wifi"* && "${WRT_CONFIG,,}" == *"no"* ]]; then
 	echo "WRT_WIFI=wifi-no" >> $GITHUB_ENV
