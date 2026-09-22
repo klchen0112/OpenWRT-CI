@@ -61,6 +61,7 @@ if [[ $WRT_TARGET != *"MT7621"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-mosdns=y" >> ./.config #DNS服务器
 	echo "CONFIG_PACKAGE_tailscale=y" >> ./.config #vpn
 	echo "CONFIG_PACKAGE_tailscaled=y" >> ./.config #vpn
+	echo "CONFIG_PACKAGE_mihomo=y" >> ./config
 fi
 
 if [[ $WRT_TARGET != *"MT7621"* ]]; then
